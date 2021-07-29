@@ -1,20 +1,17 @@
 version: 0.2
 
-env:
-  variables:
-    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
- 
 phases:
   install:
+  runtime-versions:
+     java: open-jdk8
     commands:
-      - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install -y maven
+      - echo install
+     
    
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - docker login -u User -p $LOGIN_PASSWORD
+     
    
   build:
     commands:
